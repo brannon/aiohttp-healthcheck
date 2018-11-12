@@ -12,8 +12,8 @@ class BasicHealthCheckTest(AioHTTPTestCase):
         self.hc = HealthCheck()
         super().setUp()
 
-    def get_app(self, loop):
-        app = web.Application(loop=loop)
+    def get_app(self):
+        app = web.Application()
         app.router.add_get(self.path, self.hc)
         return app
 
@@ -48,8 +48,8 @@ class BasicEnvironmentDumpTest(AioHTTPTestCase):
         self.hc = EnvironmentDump()
         super().setUp()
 
-    def get_app(self, loop):
-        app = web.Application(loop=loop)
+    def get_app(self):
+        app = web.Application()
         app.router.add_get(self.path, self.hc)
         return app
 
